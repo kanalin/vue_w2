@@ -10,6 +10,7 @@ const app = createApp({
       apiUrl: 'https://vue3-course-api.hexschool.io/v2/',
       apiPath: 'ni_week2',
       tempProduct: {},
+      productsNum: 0,
     }
   },
   methods: {
@@ -31,6 +32,7 @@ const app = createApp({
         .then(res => {
           // console.log(res);
           this.products = res.data.products;
+          this.productsNum = Object.keys(this.products).length;
       })
     }
   },
